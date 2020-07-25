@@ -1,0 +1,76 @@
+
+<?php
+	//include "lib/session.php";
+	//Session::init();
+	include_once "lib/database.php";
+	include_once "helper/format.php";
+
+	spl_autoload_register(function($class){
+		include_once"Classes/".$class.".php";
+	});
+	
+	$db=new Database();
+	$fm=new Format();
+	$pd=new Product();
+	$ct=new Cart();
+	$cat=new Category();
+	$user=new User();
+?>
+<!--cache-Control-->
+<?php
+  header("Cache-Control: no-cache, must-revalidate");
+  header("Pragma: no-cache"); 
+  header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); 
+  header("Cache-Control: max-age=2592000");
+?>
+<!--End cache-Control-->
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <link rel="stylesheet" href="css/fontawesome/css/all.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  
+  
+  <div class="template">
+    <section class="nav">
+      <h2><span>DELO</span>WAR</h2>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Education</a></li>
+        <li><a href="">Experiance</a></li>
+	    	<li><a href="">Portfolioes</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href=""><i class="fab fa-facebook"></i></a></li>
+        <li><a href=""><i class="fas fa-camera"></i></a></li>
+      </ul>
+    </section>
+    <header class="bannersection template">
+        <div class="bannerimg"></div>
+        <div class="bannertext template">
+          <h1>MD. DELOWAR HOSSAIN<br/>
+            <span class="special_color">Web Designer & Developer</span></h1>
+          <a class="btn" href="">Skill On</a>
+        </div>
+		<div class="myprofile_pic"><img src="img/pp_delowar.jpg" alt=""></div>
+    </header>
